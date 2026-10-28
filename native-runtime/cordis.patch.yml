@@ -1,0 +1,9 @@
+- id: session-controller
+  disabled: true
+- id: agent-loop
+  disabled: true
+- insert:
+    - id: wsl-native-agent-loop
+      name: dsh-wsl-native-runtime/loop
+    - id: wsl-native-session-controller
+      name: dsh-wsl-native-runtime

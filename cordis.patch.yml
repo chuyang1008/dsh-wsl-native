@@ -1,0 +1,4 @@
+- insert:
+    - id: wsl-poc
+      name: dsh-wsl-poc
+      disabled: !!js process.platform !== 'win32' && process.env.DSH_WSL_POC_BACKEND !== '1'

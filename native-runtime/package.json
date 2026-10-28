@@ -1,0 +1,9 @@
+{
+  "name": "dsh-wsl-native-runtime",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "exports": { ".": "./index.js", "./typert": "./typert.js", "./loop": "./loop.js" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+}

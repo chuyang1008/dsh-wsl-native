@@ -1,0 +1,29 @@
+# Local profiles, credentials, runtime state and test workspaces
+/.state/
+/scratch/
+node_modules/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.credentials*
+*.log
+
+# Local evidence, generated packages, and extracted upstream application code
+/artifacts/
+/asar/
+/asar.mjs
+/asar-probe.mjs
+/controller-index.js
+/controller-client.js
+/desktop-runtime.json
+*.tgz
+*.zip
+*.lnk
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

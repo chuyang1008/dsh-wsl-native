@@ -1,0 +1,3 @@
+- insert:
+    - id: wsl-native-entry-probe
+      name: dsh-wsl-native-probe

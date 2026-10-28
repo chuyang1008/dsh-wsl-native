@@ -1,0 +1,61 @@
+{
+  "name": "dsh-wsl-poc",
+  "version": "0.0.5",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": "0.2.1-rc.3"
+  },
+  "files": [
+    "index.js",
+    "controller.js",
+    "file-import.js",
+    "client.js",
+    "linux-host.js",
+    "model-broker.js",
+    "cordis.patch.yml",
+    "desktop-poc.ps1",
+    "scripts/prepare-linux.sh",
+    "scripts/run-linux.sh",
+    "scripts/runtime-guardian.mjs",
+    "scripts/supervised-backend.mjs",
+    "scripts/process-lock.mjs",
+    "scripts/parent-guard.mjs",
+    "scripts/manage-linux.mjs",
+    "scripts/stdio-relay.mjs",
+    "scripts/mock-provider.mjs",
+    "scripts/mock-config.mjs",
+    "scripts/launch-desktop-test.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "release:prepare": "node scripts/prepare-release.mjs",
+    "test": "node --test test/*.test.js",
+    "test:native-entry": "node scripts/verify-native-entry.mjs",
+    "test:native-runtime": "node scripts/verify-native-runtime.mjs",
+    "build:native": "node scripts/build-native-plugin.mjs",
+    "test:native-package": "node scripts/verify-native-runtime.mjs --package artifacts/dsh-wsl-native-0.1.0-alpha.13.tgz --host-model",
+    "desktop:native": "node scripts/launch-native-desktop.mjs",
+    "inspect:native-api": "node scripts/inspect-native-api.mjs",
+    "test:native-package:late-enable": "node scripts/verify-native-runtime.mjs --package artifacts/dsh-wsl-native-0.1.0-alpha.13.tgz --host-model --late-enable"
+  },
+  "license": "MIT"
+}
